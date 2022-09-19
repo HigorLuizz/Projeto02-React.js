@@ -1,32 +1,52 @@
 import  Modal from "react-modal"
 import { useState } from "react"
+import { useEffect } from "react"
 export default function(){
     const [remedies, setRemedies] = useState(JSON.parse(localStorage.getItem('remedios')))
-    console.log("lista",remedies)
+    if(remedies === null){
+        setRemedies([])
+    }
+    
+    const [pesquisa, setPesquisa] = useState("")
+
+    const [remediosfiltered, setRemediosFiltrados] = useState(remedies)
 
     function OpenModal(id){
-        const newRemedies = remedies.map(remedio => {
+        const newRemedies = remediosfiltered.map(remedio => {
             return remedio.id === id ? {...remedio, open:!remedio.open} : remedio
         })
-        setRemedies(newRemedies);
+        setRemediosFiltrados(newRemedies);
     }
     function CloseModal(id){
-        const newRemedies = remedies.map(remedio => {
+        const newRemedies = remediosfiltered.map(remedio => {
             return remedio.id === id ? {...remedio, open:false} : remedio
         })
-        setRemedies(newRemedies);
+        setRemediosFiltrados(newRemedies);
     }
-    console.log("lista", remedies)
+    useEffect(() => {
+        setRemediosFiltrados(
+            
+            remedies.filter(item => {
+                if (
+                    (item.nome.toLocaleLowerCase()).indexOf(pesquisa.toLocaleLowerCase()) !== -1 ) {
+                    return item;
+                }
+            })
+        )
+    }, [pesquisa])
         if (localStorage.remedios){
             return(
                 <div className="bodylista">
-                    <input type="email" 
+                    <input type="text" 
                     className="form-control d-inline" 
                     id="exampleInputEmail1" 
                     aria-describedby="emailHelp"
-                    placeholder='Pesquise um remédio...'/>
+                    placeholder='Pesquise um remédio...'
+                    value={pesquisa}
+                    onChange={(e) => setPesquisa(e.target.value)}/>
+                    {console.log("pesquisa",pesquisa)}
                     <div className="cards">
-                        {remedies.map((remedio)=> (
+                        {remediosfiltered.map((remedio)=> (
                             <div className="container">
                                 <h2>{remedio.nome}</h2>
                                 <img className="fotoremedio" src="https://la61tzqb21.map.azionedge.net/Custom/Content/Themes/Shared/Imagens/tvg_m.jpg" 
