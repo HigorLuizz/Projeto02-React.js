@@ -11,14 +11,7 @@ export default function CadastroMedicamentos(){
     })
     const [remedies, setRemedies] = useState(JSON.parse(localStorage.getItem('remedios')))
     if(remedies === null){
-        setRemedies([{
-            nome:'Ibuprofeno - Medicamento Pré-Cadastrado',
-            nomeLab:'LabJoinville',
-            dosagem:'100mg',
-            descricao:'Esse remédio é usado para inflamações',
-            preco:'R$20',
-            tipo:'Medicamento Comum'
-        }])
+        setRemedies([])
     }
     useEffect(() => {
         if(remedies.length>=1){
@@ -26,9 +19,18 @@ export default function CadastroMedicamentos(){
         }
     }, [remedies])
     function CadastrarMed(){
-        const remedioComID = {...remedy, id: Math.random()}
-        setRemedies([...remedies, remedioComID]);
-        alert('Medicamento cadastrado com sucesso!')
+        if((remedy.nome==="")||
+        (remedy.nomeLab==="")||
+        (remedy.dosagem==="")||
+        (remedy.preco==="")||
+        (remedy.tipo==="Tipo do Medicamento...")||
+        (remedy.tipo==="")){
+            alert("Esses campos devem ser preenchidos obrigatóriamente:\nMedicamento\nLaboratório\nDosagem\nTipo\nPreço unitário")
+        }else{
+            const remedioComID = {...remedy, id: Math.random()}
+            setRemedies([...remedies, remedioComID]);
+            alert('Medicamento cadastrado com sucesso!')
+        }
     }
     function LimparForm(){
         setRemedy({

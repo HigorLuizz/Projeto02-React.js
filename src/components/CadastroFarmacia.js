@@ -60,9 +60,25 @@ export default function CadastroFarmacia() {
     }
   }, [farm.logradouro])
   function Cadastrar() {
-    const farmComID = { ...farm, id: Math.random() };
-    setFarms([...farms, farmComID]);
-    alert('Farmácia cadastrada com sucesso!')
+    if((farm.nome ==="")||
+    (farm.razao==="")||
+    (farm.cnpj==="")||
+    (farm.email==="")||
+    (farm.celular==="")||
+    (farm.cep==="")||
+    (farm.logradouro==="")||
+    (farm.numero==="")||
+    (farm.bairro==="")||
+    (farm.localidade==="")||
+    (farm.uf==="")||
+    (farm.longitude==="")||
+    (farm.latitude==="")){
+      alert("Esses campos devem ser preenchidos obrigatóriamente:\nRazão Social\nNome Fantasia\nCNPJ\nEmail\nCelular\nCep\nLogradouro\nNúmero\nBairro\nCidade\nEstado\nLatitude\nLongitude\n")
+    }else{
+      const farmComID = { ...farm, id: Math.random() };
+      setFarms([...farms, farmComID]);
+      alert('Farmácia cadastrada com sucesso!')
+    }
   }
   function Limpar() {
     setFarm({

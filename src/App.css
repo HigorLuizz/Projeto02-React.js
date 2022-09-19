@@ -1,7 +1,12 @@
 .container{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  max-width: 200px !important;
+  height: 200px;
+  border: solid 1px black;
+  border-radius: 10px;
 }
 .modal-overlay{
   background: #ececec;
@@ -19,6 +24,7 @@
   max-width: 500px;
   background-color: white;
   padding: 10px;
+  border: solid 1px black;
   border-radius: 5px;
 }
 .botaoCloseModal{
@@ -26,4 +32,19 @@
   font-size: large;
   float: right;
   cursor: pointer;
+}
+.cards{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.fotoremedio{
+  width: 110px;
+  height: 110px;
+}
+.bodylista{
+  gap: 25px;
+  display: flex;
+  flex-direction: column;
 }
