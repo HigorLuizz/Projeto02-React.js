@@ -22,13 +22,13 @@ export default function NavBar(){
                     <Link to={"/cadastro-farmacia"} className="nav-link text-white" aria-current="page">Cadastro de Nova Farmácia</Link>
                     </li>
                     <li className="nav-item">
-                    <Link className="nav-link" to="/mapa">Mapa das Farmácias</Link>
+                    <Link className="nav-link text-white" to="/mapa">Mapa das Farmácias</Link>
                     </li>
                     <li className="nav-item">
-                    <Link className="nav-link" to="/cadastro-medicamento">Cadastro de Novo Medicamento</Link>
+                    <Link className="nav-link text-white" to="/cadastro-medicamento">Cadastro de Novo Medicamento</Link>
                     </li>
                     <li className="nav-item">
-                    <Link className="nav-link" to="/lista-de-medicamentos">Lista de Medicamentos</Link>
+                    <Link className="nav-link text-white" to="/lista-de-medicamentos">Lista de Medicamentos</Link>
                     </li>
                     
                 </ul>

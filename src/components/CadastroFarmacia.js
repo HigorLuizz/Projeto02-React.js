@@ -118,7 +118,7 @@ export default function CadastroFarmacia() {
     });
   }
   return (
-    <>
+    <div className="bodycadfarm">
       <h1>Cadastro de Nova Farmácia</h1>
       <div></div>
       <div className="row">
@@ -252,14 +252,14 @@ export default function CadastroFarmacia() {
         </div>
         <div className="row">
           <div className="col">
-            <button type="submit" className="btn btn-primary" onClick={Limpar}>
+            <button type="submit" className="btn btn-success" onClick={Limpar}>
               Limpar Formulário
             </button>
           </div>
           <div className="col">
             <button
               type="submit"
-              className="btn btn-primary"
+              className="btn btn-success"
               onClick={Cadastrar}
             >
               Cadastrar
@@ -267,6 +267,6 @@ export default function CadastroFarmacia() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

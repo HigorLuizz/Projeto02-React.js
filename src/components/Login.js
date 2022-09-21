@@ -24,11 +24,11 @@ export default function Login(){
         <div className='bodylogin'>
             <form className='formlogin'>
                 <div className='row'>
-                    <div><b>Faça seu Login para continuar</b></div>
+                    <div><h2>Faça seu Login para continuar</h2></div>
                     <div className="mb-3">
                         <label className="form-label d-inline">Email      </label>
                         <input type="email" 
-                        className="col-6" 
+                        className="col-12" 
                         id="exampleInputEmail1" 
                         aria-describedby="emailHelp"
                         placeholder='Digite seu email aqui'
@@ -45,10 +45,11 @@ export default function Login(){
                     <div className="mb-3">
                         <label className="form-label">Senha </label>
                         <input type="password" 
-                        className="col-6" 
+                        className="col-12" 
                         id="exampleInputPassword1"
                         placeholder='Digite sua senha aqui. A senha deve conter mais de 8 dígitos'
                         value={dadosLogin.senha}
+                        inputmode="numeric"
                         onChange={(e) => {
                             setDadosLogin({
                                 ...dadosLogin,
@@ -59,7 +60,7 @@ export default function Login(){
 
                 </div>
                 <button type="submit" 
-                className="btn btn-primary"
+                className="btn btn-success"
                 onClick={LoginValidate}>Entrar</button>
             </form>
 
@@ -67,3 +68,4 @@ export default function Login(){
         
     )
 }
+console.log(/^(?=.*?[a-z])(?=(?:.*?\d){1})[a-z\d]{8,}$/i.test("2as"));

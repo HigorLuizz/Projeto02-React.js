@@ -43,7 +43,7 @@ export default function CadastroMedicamentos(){
         })
     }
     return(
-        <>
+        <div className="bodycadmed">
             <h1>Cadastro de Novo Remédio</h1>
             <div className="row">
                 <ItemFormulario
@@ -99,20 +99,20 @@ export default function CadastroMedicamentos(){
             </div>
             <div className="row">
           <div className="col">
-            <button type="submit" className="btn btn-primary" onClick={LimparForm}>
+            <button type="submit" className="btn btn-success" onClick={LimparForm}>
               Limpar Formulário
             </button>
           </div>
           <div className="col">
             <button
               type="submit"
-              className="btn btn-primary"
+              className="btn btn-success"
               onClick={CadastrarMed}
             >
               Cadastrar
             </button>
           </div>
         </div>
-        </>
+        </div>
     )
 }

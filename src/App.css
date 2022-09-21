@@ -1,15 +1,16 @@
 .container{
+  padding: 30px;
   background-color: #4ae44a;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   max-width: 200px !important;
-  height: 200px;
+  height: 250px;
   border-radius: 10px;
 }
 .modal-overlay{
-  background: #ececec;
+  background: white;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -22,7 +23,7 @@
 .modal-content{
   width: 90%;
   max-width: 500px;
-  background-color: white;
+  background-color: #4ae44a;
   padding: 10px;
   border: solid 1px black;
   border-radius: 5px;
@@ -32,6 +33,10 @@
   font-size: large;
   float: right;
   cursor: pointer;
+  border-radius: 7px;
+  border: none;
+  background-color: green;
+  color: white;
 }
 .cards{
   display: flex;
@@ -49,13 +54,18 @@
   flex-direction: column;
 }
 .formlogin{
-  border: solid 1px black !important;
+  height: 300px;
   max-width: 500px !important;
   border-radius: 10px;
+  background-color:#4ae44a ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
 }
 .bodylogin{
   width: 100vw;
-  height: 50vh;
+  height: 80vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -77,13 +87,23 @@
   justify-content: center;
   align-items: center;
 }
+.bodycadmed{
+  padding: 20px;
+}
+.bodycadfarm{
+  padding: 20px;
+}
 .btndetalhes{
-  border-radius: 15px;
-  color: white;
-  background-color: #27a327;
+  border-radius: 7px;
+  color: #27a327;
+  background-color: white;
+  border: none;
 }
 .btnsair{
-  border-radius: 15px;
+  border-radius: 7px;
+  background-color: #27a327;
+  color: white;
+  border: none;
 }
 .sair{
   float:right;
