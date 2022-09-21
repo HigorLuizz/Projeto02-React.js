@@ -1,14 +1,34 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
-import { useFarms } from "../contexts/FarmaciasContext";
 import ItemFormulario from "./ItemFormulario";
-import { useLogin } from "./LoginContext";
 
 const ACESS_TOKEN_MAP_BOX=`access_token=pk.eyJ1IjoiaGlnb3JsdWl6IiwiYSI6ImNsODFxbjBiaTAyajgzdnBocnhya2h3aWIifQ.orF6DkOQ-OS4knC920LCyg`
 export default function CadastroFarmacia() {
-  const {login} = useLogin()
-  console.log("login",login)
-  const { farms, setFarms } = useFarms();
+  const [farms, setFarms] = useState(JSON.parse(localStorage.getItem('farmacias')))
+  if (farms === null){
+    setFarms([{
+      razao: "Clamed Farmácias",
+      cnpj: "12.074.073/0001-07",
+      nome: "Farmácia do Higor",
+      email: "famaciadohigor@gmail.com",
+      telefone: "47 3473-1259",
+      celular: "47 999546978",
+      cep: "89223-490",
+      logradouro: "Rua dos Timbiras",
+      numero: "154",
+      bairro: "Jardim Sofia",
+      localidade: "Joinville",
+      uf: "SC",
+      complemento: "Casa 01",
+      latitude: -26.240327,
+      longitude: -48.846791,
+    }])
+  }
+  useEffect(() => {
+    if(farms.length>=1){
+        localStorage.setItem('farmacias', JSON.stringify(farms))
+    }
+}, [farms])
   const [farm, setFarm] = useState({
     razao: "",
     cnpj: "",
@@ -49,8 +69,6 @@ export default function CadastroFarmacia() {
         fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${farm.logradouro}.json?${ACESS_TOKEN_MAP_BOX}`)
         .then((response)=> response.json())
         .then((data)=>{
-            console.log(data)
-            console.log(ACESS_TOKEN_MAP_BOX)
             setFarm({
                 ...farm,
                 latitude: data.features[0].center[1],
@@ -249,8 +267,6 @@ export default function CadastroFarmacia() {
           </div>
         </div>
       </div>
-      {console.log(farm)}
-      {console.log(farms)}
     </>
   );
 }

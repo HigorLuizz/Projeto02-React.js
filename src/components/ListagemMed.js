@@ -2,6 +2,7 @@ import  Modal from "react-modal"
 import { useState } from "react"
 import { useEffect } from "react"
 export default function(){
+    Modal.setAppElement("#root")
     const [remedies, setRemedies] = useState(JSON.parse(localStorage.getItem('remedios')))
     if(remedies === null){
         setRemedies([])
@@ -44,14 +45,13 @@ export default function(){
                     placeholder='Pesquise um remédio...'
                     value={pesquisa}
                     onChange={(e) => setPesquisa(e.target.value)}/>
-                    {console.log("pesquisa",pesquisa)}
                     <div className="cards">
                         {remediosfiltered.map((remedio)=> (
                             <div className="container">
                                 <h2>{remedio.nome}</h2>
-                                <img className="fotoremedio" src="https://la61tzqb21.map.azionedge.net/Custom/Content/Themes/Shared/Imagens/tvg_m.jpg" 
+                                <img className="fotoremedio" src="https://cdn-icons-png.flaticon.com/512/1810/1810119.png" 
                                 alt="Imagem de uma caixa de medicamento genérica"></img>
-                                <button onClick={() => OpenModal(remedio.id)}>Ver mais detalhes...</button>
+                                <button className="btndetalhes" onClick={() => OpenModal(remedio.id)}>Mais detalhes...</button>
                                 <Modal
                                 isOpen={remedio.open}
                                 onRequestClose={CloseModal}

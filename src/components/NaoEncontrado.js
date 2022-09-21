@@ -1,5 +1,5 @@
 export default function NaoEncontrado(){
     return(
-        <h1>Nada escontrado...</h1>
+        <h1>Nada encontrado...</h1>
     )
 }

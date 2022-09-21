@@ -42,7 +42,6 @@ export default function CadastroMedicamentos(){
             tipo:''
         })
     }
-    console.log(remedies)
     return(
         <>
             <h1>Cadastro de Novo Remédio</h1>
@@ -114,7 +113,6 @@ export default function CadastroMedicamentos(){
             </button>
           </div>
         </div>
-            {console.log(remedy)}
         </>
     )
 }

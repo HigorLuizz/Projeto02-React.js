@@ -1,5 +1,4 @@
 import './App.css';
-import { FarmProvider } from './contexts/FarmaciasContext';
 import { LoginProvider } from './components/LoginContext';
 import Rotas from './components/Rotas';
 import { Modal } from 'bootstrap';
@@ -8,11 +7,11 @@ import { Modal } from 'bootstrap';
 
 function App() {
   return (
-    <FarmProvider>
+
       <LoginProvider>
         <Rotas/>
       </LoginProvider>
-    </FarmProvider>
+
   );
 }
 

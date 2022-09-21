@@ -1,11 +1,11 @@
 .container{
+  background-color: #4ae44a;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   max-width: 200px !important;
   height: 200px;
-  border: solid 1px black;
   border-radius: 10px;
 }
 .modal-overlay{
@@ -47,4 +47,44 @@
   gap: 25px;
   display: flex;
   flex-direction: column;
+}
+.formlogin{
+  border: solid 1px black !important;
+  max-width: 500px !important;
+  border-radius: 10px;
+}
+.bodylogin{
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.fotoclamed{
+  width: 100px;
+  height: 70px;
+}
+.fotoemoji{
+  width: 200px;
+  height:200px;
+}
+.naologado{
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btndetalhes{
+  border-radius: 15px;
+  color: white;
+  background-color: #27a327;
+}
+.btnsair{
+  border-radius: 15px;
+}
+.sair{
+  float:right;
 }
