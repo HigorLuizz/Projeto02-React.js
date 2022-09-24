@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  max-width: 200px !important;
+  max-width: 250px !important;
   height: 250px;
   border-radius: 10px;
 }
@@ -107,4 +107,10 @@
 }
 .sair{
   float:right;
+}
+.bntfazerlogin{
+  border-radius: 7px;
+  background-color: #27a327;
+  color: white;
+  border: none;
 }

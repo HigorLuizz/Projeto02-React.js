@@ -13,11 +13,14 @@ export default function Login(){
     function LoginValidate(e){
         e.preventDefault();
         if((dadosLogin.email.length>0) && 
-        (dadosLogin.senha.length>=8)){
+        (dadosLogin.senha.length>=8)&&
+        (/^.*?[a-z]/i.test(dadosLogin.senha) === true)&&
+        (/^(?:.*?\d){1}/.test(dadosLogin.senha) === true)&&
+        (dadosLogin.email.includes("@") === true)){
             setLogin("logado")
-            navigate("/cadastro-farmacia")
+            navigate("/mapa")
         }else{
-            alert('Um email e uma senha com no mínimo 8 digitos são obrigatório')
+            alert('Um email válido e uma senha com:\n  -Mínimo de 8 dígitos\n  -Mínimo 1 letra e 1 número\nSão obrigatórios')
         }  
     }
     return(
@@ -68,4 +71,3 @@ export default function Login(){
         
     )
 }
-console.log(/^(?=.*?[a-z])(?=(?:.*?\d){1})[a-z\d]{8,}$/i.test("2as"));

@@ -4,7 +4,8 @@ export default function ItemFormulario({
   value,
   name,
   setInfo,
-  colnumber
+  colnumber,
+  maxLength
 }) {
   return (
     <div className={colnumber}>
@@ -13,6 +14,7 @@ export default function ItemFormulario({
         type="text"
         className="form-control"
         placeholder={placeholder}
+        maxLength={maxLength}
         value={value}
         onChange={(e) => {
             setInfo(prev => ({

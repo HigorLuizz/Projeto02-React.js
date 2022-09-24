@@ -51,6 +51,7 @@ export default function CadastroMedicamentos(){
                 placeholder="Digite o nome do medicamento"
                 value={remedy.nome}
                 name="nome"
+                maxLength="12"
                 setInfo={setRemedy}
                 colnumber="col-6"
                 />

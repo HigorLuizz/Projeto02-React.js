@@ -18,6 +18,7 @@ export default function(){
         })
         setRemediosFiltrados(newRemedies);
     }
+    console.log(remedies)
     function CloseModal(id){
         const newRemedies = remediosfiltered.map(remedio => {
             return remedio.id === id ? {...remedio, open:false} : remedio
